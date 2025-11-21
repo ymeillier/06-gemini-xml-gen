@@ -1,3 +1,6 @@
+Purpose is to test the ability to create draw.io diagrams with Gemini after first tinkering with the look of the diagram in gemini.
+
+
 Had gemini create an infographic of the control plane access method for GKE based on the documentation link [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-isolation](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-isolation)
 
 ![](./assets/README/file-20251121115827049.png)
