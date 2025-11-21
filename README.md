@@ -19,6 +19,16 @@ Asked Gemini to produce
 
 After Gemini produced the xml for import to draw.io, the diagram opened properly:
 
+
+![](./assets/README/file-20251121120300632.png)
+
+
+![](./assets/README/file-20251121120327751.png)
+
+
+![](./assets/README/file-20251121120318559.png)
+
+
 ![](./assets/README/file-20251121115656362.png)
 
 
