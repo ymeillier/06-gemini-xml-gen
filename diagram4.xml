@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-05-21T12:00:00.000Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="A1b2C3d4E5f6G7h8I9j0" version="24.4.0" type="device">
+  <diagram id="google-cloud-agents-architecture" name="Google Cloud Agents Architecture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="googleCloudBg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4285F4;strokeColor=none;opacity=10;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="110" width="900" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="googleCloudTitle" value="Google Cloud" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#4285F4;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="regionBg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="160" width="880" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="regionLabel" value="Region" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="appUsers" value="Application users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F3F3;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="130" y="30" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="appUsersIcon" value="" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=none;" vertex="1" parent="appUsers">
+          <mxGeometry x="10" y="10" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aiDevelopers" value="AI developers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F3F3;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="520" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="aiDevelopersIcon" value="" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=none;" vertex="1" parent="aiDevelopers">
+          <mxGeometry x="10" y="10" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend" value="Frontend&#xa;Cloud Run service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=50;" vertex="1" parent="1">
+          <mxGeometry x="120" y="180" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="frontendIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;strokeColor=none;" vertex="1" parent="frontend">
+          <mxGeometry x="10" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="promptEdge" value="Prompt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#333333;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="appUsers" target="frontend">
+          <Array as="points">
+            <mxPoint x="195" y="120" />
+            <mxPoint x="195" y="120" />
+          </Array>
+        </mxCell>
+        <mxCell id="num1" value="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#34A853;strokeColor=none;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="85" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="humanLoopEdge" value="Human-in-the-loop interaction" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontColor=#333333;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="frontend" target="appUsers">
+          <Array as="points">
+            <mxPoint x="420" y="205" />
+            <mxPoint x="420" y="50" />
+          </Array>
+        </mxCell>
+        <mxCell id="adk" value="ADK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="550" y="240" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="aiDevToAdk" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;" edge="1" parent="1" source="aiDevelopers" target="adk">
+          <Array as="points">
+            <mxPoint x="580" y="100" />
+            <mxPoint x="575" y="100" />
+          </Array>
+        </mxCell>
+        <mxCell id="agentsBg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F4EA;strokeColor=#34A853;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="270" width="520" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="agentsLabel" value="Agents" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#34A853;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="coordinator" value="Coordinator&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=50;" vertex="1" parent="1">
+          <mxGeometry x="130" y="300" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="coordinatorIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;strokeColor=none;dashed=1;" vertex="1" parent="coordinator">
+          <mxGeometry x="10" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="frontendToCoordinator" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#34A853;" edge="1" parent="1" source="frontend" target="coordinator" />
+        <mxCell id="num2" value="2" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#34A853;strokeColor=none;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="250" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sequenceBg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#34A853;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="480" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sequenceLabel" value="Sequence" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#34A853;" vertex="1" parent="1">
+          <mxGeometry x="70" y="400" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="taskA" value="Task-A&#xa;Subagent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="70" y="430" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="taskAIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;strokeColor=none;dashed=1;" vertex="1" parent="taskA">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="taskA1" value="Task-A.1&#xa;Subagent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="70" y="530" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="taskA1Icon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;strokeColor=none;dashed=1;" vertex="1" parent="taskA1">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="taskB" value="Task-B&#xa;Subagent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="240" y="430" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="taskBIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;strokeColor=none;dashed=1;" vertex="1" parent="taskB">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="quality" value="Quality evaluator&#xa;Subagent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="220" y="530" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qualityIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;strokeColor=none;dashed=1;" vertex="1" parent="quality">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="promptEnhancer" value="Prompt enhancer&#xa;Subagent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="400" y="480" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="promptEnhancerIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;strokeColor=none;dashed=1;" vertex="1" parent="promptEnhancer">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="responseGen" value="Response Generator&#xa;Subagent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=50;" vertex="1" parent="1">
+          <mxGeometry x="110" y="640" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="responseGenIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;strokeColor=none;dashed=1;" vertex="1" parent="responseGen">
+          <mxGeometry x="10" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="coordToTaskA" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#34A853;" edge="1" parent="1" source="coordinator" target="taskA" />
+        <mxCell id="coordToTaskB" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#34A853;" edge="1" parent="1" source="coordinator" target="taskB" />
+        <mxCell id="subagentInvocation" value="Subagent invocation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#34A853;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="360" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="num3" value="3" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#34A853;strokeColor=none;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="355" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="taskAToA1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#34A853;" edge="1" parent="1" source="taskA" target="taskA1" />
+        <mxCell id="taskBToQuality" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#34A853;" edge="1" parent="1" source="taskB" target="quality" />
+        <mxCell id="qualityToEnhancer" value="If rework is required" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#34A853;fontColor=#333333;labelBackgroundColor=#ffffff;fontSize=10;" edge="1" parent="1" source="quality" target="promptEnhancer">
+          <Array as="points">
+            <mxPoint x="465" y="550" />
+          </Array>
+        </mxCell>
+        <mxCell id="enhancerToTaskB" value="Updated prompt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#34A853;fontColor=#333333;labelBackgroundColor=#ffffff;fontSize=10;" edge="1" parent="1" source="promptEnhancer" target="taskB">
+          <Array as="points">
+            <mxPoint x="465" y="450" />
+          </Array>
+        </mxCell>
+        <mxCell id="iterativeRefinement" value="Iterative refinement" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#34A853;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="380" y="400" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="taskA1ToResponse" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeColor=#34A853;" edge="1" parent="1" source="taskA1" target="responseGen">
+          <Array as="points">
+            <mxPoint x="130" y="600" />
+            <mxPoint x="152" y="600" />
+          </Array>
+        </mxCell>
+        <mxCell id="qualityToResponse" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;strokeColor=#34A853;" edge="1" parent="1" source="quality" target="responseGen">
+          <Array as="points">
+            <mxPoint x="295" y="600" />
+            <mxPoint x="238" y="600" />
+          </Array>
+        </mxCell>
+        <mxCell id="num4" value="4" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#34A853;strokeColor=none;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="610" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="responseGenToCoordinator" value="Response" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#34A853;fontColor=#333333;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="responseGen" target="coordinator">
+          <Array as="points">
+            <mxPoint x="560" y="660" />
+            <mxPoint x="560" y="325" />
+          </Array>
+        </mxCell>
+        <mxCell id="num5" value="5" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#34A853;strokeColor=none;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="315" y="650" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="modelRuntimeLabel" value="Model runtime:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="810" y="360" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="modelArmor" value="Model Armor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="590" y="380" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="modelArmorIcon" value="" style="shape=mxgraph.gcp2.security_command_center;fillColor=#34A853;strokeColor=none;" vertex="1" parent="modelArmor">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aiModel" value="AI model&#xa;(e.g., Gemini)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="730" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="aiModelIcon" value="" style="shape=mxgraph.gcp2.vertex_ai;fillColor=#4285F4;strokeColor=none;" vertex="1" parent="aiModel">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vertexAi" value="Vertex AI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="870" y="380" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vertexAiIcon" value="" style="shape=mxgraph.gcp2.vertex_ai;fillColor=#FABB00;strokeColor=none;" vertex="1" parent="vertexAi">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cloudRunModel" value="Cloud Run" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="870" y="450" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cloudRunModelIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#EA4335;strokeColor=none;" vertex="1" parent="cloudRunModel">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gkeModel" value="GKE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="870" y="520" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gkeModelIcon" value="" style="shape=mxgraph.gcp2.kubernetes_engine;fillColor=#34A853;strokeColor=none;" vertex="1" parent="gkeModel">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="orLabel1" value="or" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="870" y="425" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="orLabel2" value="or" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="870" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="adkToModelArmor" value="Inference requests" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="adk" target="modelArmor">
+          <Array as="points">
+            <mxPoint x="575" y="350" />
+            <mxPoint x="645" y="350" />
+          </Array>
+        </mxCell>
+        <mxCell id="modelArmorToAi" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#333333;" edge="1" parent="1" source="modelArmor" target="aiModel" />
+        <mxCell id="aiToModelArmor" value="Inference responses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#333333;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="aiModel" target="modelArmor">
+          <Array as="points">
+            <mxPoint x="790" y="490" />
+            <mxPoint x="645" y="490" />
+          </Array>
+        </mxCell>
+        <mxCell id="modelArmorToAdk" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=#333333;" edge="1" parent="1" source="modelArmor" target="adk">
+           <Array as="points">
+            <mxPoint x="563" y="400" />
+          </Array>
+        </mxCell>
+
+        <mxCell id="aiModelToVertex" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#333333;" edge="1" parent="1" source="aiModel" target="vertexAi" />
+        <mxCell id="agentsRuntimeLabel" value="Agents&#xa;runtime:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="710" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cloudRunAgent" value="Cloud Run" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="110" y="705" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cloudRunAgentIcon" value="" style="shape=mxgraph.gcp2.cloud_run;fillColor=#EA4335;strokeColor=none;" vertex="1" parent="cloudRunAgent">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="agentEngine" value="Agent Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="250" y="705" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="agentEngineIcon" value="" style="shape=mxgraph.gcp2.compute_engine;fillColor=#FABB00;strokeColor=none;" vertex="1" parent="agentEngine">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gkeAgent" value="GKE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="390" y="705" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gkeAgentIcon" value="" style="shape=mxgraph.gcp2.kubernetes_engine;fillColor=#34A853;strokeColor=none;" vertex="1" parent="gkeAgent">
+          <mxGeometry x="5" y="5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="orLabel3" value="or" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="225" y="715" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="orLabel4" value="or" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="375" y="715" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpClients" value="MCP clients" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="560" y="620" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="toolsCloudBg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D2E3FC;strokeColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="660" y="670" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="toolsCloudLabel" value="Tools within Google Cloud" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="670" y="765" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="databases" value="Databases" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=bottom;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="675" y="690" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="databasesIcon" value="" style="shape=mxgraph.gcp2.cloud_sql;fillColor=#4285F4;strokeColor=none;" vertex="1" parent="databases">
+          <mxGeometry x="10" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="apis" value="APIs" style="shape=mxgraph.gcp2.api_gateway;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=bottom;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="745" y="690" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="moreTools" value="..." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="790" y="700" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpToToolsCloud" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;" edge="1" parent="1" source="mcpClients" target="toolsCloudBg">
+           <Array as="points">
+            <mxPoint x="600" y="660" />
+            <mxPoint x="740" y="660" />
+          </Array>
+        </mxCell>
+        <mxCell id="mcpServerLabel1" value="MCP&#xa;servers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="670" y="640" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpServerLabel2" value="MCP&#xa;servers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="640" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpToDb" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;dashed=1;" edge="1" parent="1" source="mcpServerLabel1" target="databases" />
+        <mxCell id="mcpToApi" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;dashed=1;" edge="1" parent="1" source="mcpServerLabel2" target="apis" />
+        <mxCell id="observability" value="Google Cloud Observability" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="450" y="760" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="observabilityIcon" value="" style="shape=mxgraph.gcp2.cloud_monitoring;fillColor=#4285F4;strokeColor=none;" vertex="1" parent="observability">
+          <mxGeometry x="5" y="5" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="agentsToObservability" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999999;" edge="1" parent="1" source="agentsBg" target="observability">
+           <Array as="points">
+            <mxPoint x="440" y="775" />
+          </Array>
+        </mxCell>
+
+        <mxCell id="externalToolsBg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D2E3FC;strokeColor=#4285F4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="840" width="130" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="externalToolsLabel" value="External tools" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="805" y="925" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="services" value="Services" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=bottom;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="805" y="860" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="files" value="Files" style="shape=note;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#FFFFFF;strokeColor=#999999;fontColor=#333333;verticalAlign=bottom;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="865" y="860" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="moreExternal" value="..." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="905" y="870" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpToExternal" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;" edge="1" parent="1" source="mcpClients" target="externalToolsBg">
+           <Array as="points">
+            <mxPoint x="620" y="820" />
+            <mxPoint x="855" y="820" />
+          </Array>
+        </mxCell>
+        <mxCell id="mcpServerLabel3" value="MCP&#xa;servers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="805" y="810" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpServerLabel4" value="MCP&#xa;servers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="865" y="810" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpToServices" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;dashed=1;" edge="1" parent="1" source="mcpServerLabel3" target="services" />
+        <mxCell id="mcpToFiles" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;dashed=1;" edge="1" parent="1" source="mcpServerLabel4" target="files" />
+
+        <mxCell id="platformAdmins" value="Platform administrators&#xa;DevOps engineers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F3F3;strokeColor=#999999;fontColor=#333333;verticalAlign=middle;align=left;spacingLeft=40;" vertex="1" parent="1">
+          <mxGeometry x="110" y="850" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="platformAdminsIcon" value="" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=none;" vertex="1" parent="platformAdmins">
+          <mxGeometry x="10" y="15" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="adminToCloud" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=#999999;" edge="1" parent="1" source="platformAdmins" target="googleCloudBg" />
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
