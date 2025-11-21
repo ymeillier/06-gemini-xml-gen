@@ -1,0 +1,58 @@
+graph TD
+    %% Styles
+    classDef blueFill fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px;
+    classDef greenFill fill:#d5e8d4,stroke:#82b366,stroke-width:2px;
+    classDef orangeFill fill:#ffe6cc,stroke:#d79b00,stroke-width:2px;
+    classDef redBox fill:#f8cecc,stroke:#b85450,stroke-width:2px,align:left;
+    classDef db fill:#f5f5f5,stroke:#666666,stroke-width:2px;
+
+    %% --- SECTION 1: KUBE-DNS ---
+    subgraph ClusterDNS ["kube-dns (Cluster DNS)"]
+        direction TB
+        
+        subgraph InternalFlow [Resolution Flow]
+            Pod1(Pod Client) -->|DNS Query| KubeSvc[kube-dns Service]
+            KubeSvc --> CoreDNS[CoreDNS Pods]
+            CoreDNS -->|Read| CState[(Cluster State\nServices/Endpoints)]
+        end
+
+        subgraph CustomConfig [Custom Configuration]
+            CM[ConfigMap] -->|Corefile| CoreDNS
+        end
+        
+        TB1[<b>Troubleshooting kube-dns</b><br/>- Check Pod Status & Logs<br/>- Test Connectivity (dig/nslookup)<br/>- Verify ConfigMap Syntax]:::redBox
+    end
+
+    %% --- SECTION 2: NodeLocal ---
+    subgraph NodeLocal ["NodeLocal DNSCache (Performance & Scale)"]
+        direction TB
+        
+        subgraph NodeBox [Node]
+            Pod2(Pod Client) --> NodeDS[NodeLocal DNSCache\nDaemonSet]
+        end
+        
+        NodeDS -->|Cache| LocalCache[(Local Cache)]
+        NodeDS -->|Forward Misses| KubeSvc
+        
+        TB2[<b>Troubleshooting NodeLocal</b><br/>- Check DaemonSet Status<br/>- Analyze Cache Hit/Miss Rates<br/>- Review Node Networking & IP Tables]:::redBox
+    end
+
+    %% --- SECTION 3: Cloud DNS ---
+    subgraph CloudSection ["Cloud DNS (Managed & External)"]
+        direction TB
+        
+        subgraph CloudFlow [External Resolution]
+            GKE[GKE Cluster] -->|External Query| CloudDNS[Cloud DNS]
+            CloudDNS --> Internet((Internet Domains))
+        end
+        
+        KubeSvc -->|Upstream Forwarding| CloudDNS
+        
+        TB3[<b>Troubleshooting Cloud DNS</b><br/>- Verify Cloud DNS Zone Config<br/>- Check IAM Permissions & Quotas<br/>- Monitor Latency & Errors]:::redBox
+    end
+
+    %% Apply Styles to Subgraphs
+    class ClusterDNS,InternalFlow,CustomConfig blueFill
+    class NodeLocal,NodeBox greenFill
+    class CloudSection,CloudFlow orangeFill
+    class CState,LocalCache db

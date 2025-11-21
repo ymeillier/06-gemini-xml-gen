@@ -1,0 +1,141 @@
+<mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="2" value="Google Cloud" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4285F4;strokeColor=none;fontColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;fontSize=16;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="40" y="40" width="760" height="600" as="geometry" />
+    </mxCell>
+    <mxCell id="3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="2">
+      <mxGeometry x="20" y="50" width="720" height="530" as="geometry" />
+    </mxCell>
+    <mxCell id="4" value="Managed TLS certificate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#4285f4;fontColor=#4285f4;" vertex="1" parent="3">
+      <mxGeometry x="260" y="30" width="200" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="5" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/2913/2913467.png" vertex="1" parent="4">
+      <mxGeometry x="10" y="5" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="6" value="External Application Load Balancer w/ Anycast VIP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d2e3d5;strokeColor=#82b366;fontColor=#000000;" vertex="1" parent="3">
+      <mxGeometry x="160" y="70" width="400" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="7" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/2282/2282202.png" vertex="1" parent="6">
+      <mxGeometry x="190" y="10" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="8" value="Region 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;" vertex="1" parent="3">
+      <mxGeometry x="40" y="140" width="300" height="370" as="geometry" />
+    </mxCell>
+    <mxCell id="9" value="Region 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;" vertex="1" parent="3">
+      <mxGeometry x="380" y="140" width="300" height="370" as="geometry" />
+    </mxCell>
+    <mxCell id="10" value="Service Mesh" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#99ccff;fontColor=#000000;align=center;verticalAlign=top;spacingTop=10;" vertex="1" parent="3">
+      <mxGeometry x="60" y="170" width="600" height="320" as="geometry" />
+    </mxCell>
+    <mxCell id="11" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/3665/3665937.png" vertex="1" parent="10">
+      <mxGeometry x="290" y="10" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="12" value="GKE cluster 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontColor=#333333;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;" vertex="1" parent="10">
+      <mxGeometry x="20" y="40" width="270" height="260" as="geometry" />
+    </mxCell>
+    <mxCell id="13" value="GKE cluster 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontColor=#333333;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;" vertex="1" parent="10">
+      <mxGeometry x="310" y="40" width="270" height="260" as="geometry" />
+    </mxCell>
+    <mxCell id="14" value="Cloud Armor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4285f4;fontColor=#000000;" vertex="1" parent="10">
+      <mxGeometry x="200" y="50" width="200" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="15" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/4424/4424100.png" vertex="1" parent="14">
+      <mxGeometry x="10" y="5" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="16" value="Mesh ingress gateway pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;spacingLeft=40;" vertex="1" parent="12">
+      <mxGeometry x="20" y="40" width="180" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="17" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/9626/9626702.png" vertex="1" parent="16">
+      <mxGeometry x="10" y="10" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="18" value="Frontend service pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;spacingLeft=40;" vertex="1" parent="12">
+      <mxGeometry x="20" y="100" width="180" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="19" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/9626/9626702.png" vertex="1" parent="18">
+      <mxGeometry x="10" y="10" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="20" value="Backend service pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;spacingLeft=40;" vertex="1" parent="12">
+      <mxGeometry x="20" y="160" width="180" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="21" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/9626/9626702.png" vertex="1" parent="20">
+      <mxGeometry x="10" y="10" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="22" value="Mesh ingress gateway pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;spacingLeft=40;" vertex="1" parent="13">
+      <mxGeometry x="20" y="40" width="180" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="23" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/9626/9626702.png" vertex="1" parent="22">
+      <mxGeometry x="10" y="10" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="24" value="Frontend service pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;spacingLeft=40;" vertex="1" parent="13">
+      <mxGeometry x="20" y="100" width="180" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="25" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/9626/9626702.png" vertex="1" parent="24">
+      <mxGeometry x="10" y="10" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="26" value="Backend service pods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;spacingLeft=40;" vertex="1" parent="13">
+      <mxGeometry x="20" y="160" width="180" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="27" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/9626/9626702.png" vertex="1" parent="26">
+      <mxGeometry x="10" y="10" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="28" value="Service Discovery" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;dashed=1;" vertex="1" parent="10">
+      <mxGeometry x="260" y="165" width="80" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="29" value="Self-signed certificate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;fontColor=#000000;align=left;spacingLeft=30;" vertex="1" parent="12">
+      <mxGeometry x="210" y="45" width="130" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="30" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/2913/2913467.png" vertex="1" parent="29">
+      <mxGeometry x="5" y="5" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="31" value="mTLS certificate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;fontColor=#000000;align=left;spacingLeft=30;" vertex="1" parent="12">
+      <mxGeometry x="210" y="105" width="130" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="32" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/2913/2913467.png" vertex="1" parent="31">
+      <mxGeometry x="5" y="5" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="33" value="mTLS certificate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;fontColor=#000000;align=left;spacingLeft=30;" vertex="1" parent="12">
+      <mxGeometry x="210" y="165" width="130" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="34" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/2913/2913467.png" vertex="1" parent="33">
+      <mxGeometry x="5" y="5" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="35" value="Self-signed certificate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;fontColor=#000000;align=left;spacingLeft=30;" vertex="1" parent="13">
+      <mxGeometry x="210" y="45" width="130" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="36" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/2913/2913467.png" vertex="1" parent="35">
+      <mxGeometry x="5" y="5" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="37" value="mTLS certificate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;fontColor=#000000;align=left;spacingLeft=30;" vertex="1" parent="13">
+      <mxGeometry x="210" y="105" width="130" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="38" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/2913/2913467.png" vertex="1" parent="37">
+      <mxGeometry x="5" y="5" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="39" value="mTLS certificate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;fontColor=#000000;align=left;spacingLeft=30;" vertex="1" parent="13">
+      <mxGeometry x="210" y="165" width="130" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="40" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn-icons-png.flaticon.com/512/2913/2913467.png" vertex="1" parent="39">
+      <mxGeometry x="5" y="5" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="41" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="3" source="6" target="16">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="360" y="110" as="sourcePoint" />
+        <mxPoint x="170" y="200" as="targetPoint" />
+        <Array as="points">
+          <mxPoint x="170" y="110" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="42" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="3" source="6" target="22">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="360" y="110" as="sourcePoint" />
+        <mxPoint x="510" y="200" as="targetPoint" />
+        <Array as="points">
+          <mxPoint x="510" y="110" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>
