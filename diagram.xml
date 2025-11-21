@@ -1,0 +1,211 @@
+<mxfile host="app.diagrams.net" modified="2024-05-22T10:00:00.000Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="your-etag-here" version="24.4.0" type="device">
+  <diagram id="gke-access-methods" name="GKE Access Methods">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="GKE Control Plane Access Methods: IP-based vs. DNS Endpoint Scenarios" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="810" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_container" value="1. IP-based Private IP" style="swimlane;html=1;startSize=40;fontSize=18;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="260" height="480" as="geometry">
+            <mxRectangle x="20" y="80" width="260" height="480" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col1_internet_row" value="Internet Access" style="swimlane;html=1;startSize=30;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="col1_container">
+          <mxGeometry y="40" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_user_internet" value="Remote&#xa;User" style="shape=mxgraph.aws4.user;html=1;fillColor=#757575;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;" vertex="1" parent="col1_internet_row">
+          <mxGeometry x="20" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_cloud" value="Public&#xa;Internet" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;verticalAlign=bottom;fontSize=12;" vertex="1" parent="col1_internet_row">
+          <mxGeometry x="80" y="50" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_gke_internet" value="GKE Control Plane&#xa;&#xa;&#xa;Private IP" style="shape=mxgraph.gcp2.kubernetes;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;align=center;imageAspect=0;" vertex="1" parent="col1_internet_row">
+          <mxGeometry x="180" y="50" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_arrow_internet" value="" style="endArrow=classic;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF0000;strokeWidth=3;" edge="1" parent="col1_internet_row" source="col1_user_internet" target="col1_gke_internet">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="80" as="sourcePoint" />
+            <mxPoint x="170" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col1_x" value="X" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=36;fontStyle=1;fontColor=#FF0000;" vertex="1" parent="col1_internet_row">
+          <mxGeometry x="105" y="55" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_text_internet" value="Direct Internet Access Blocked.&#xa;Must use bastion/VPN." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="col1_internet_row">
+          <mxGeometry x="10" y="140" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_internal_row" value="Internal Access via Bastion Host" style="swimlane;html=1;startSize=30;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="col1_container">
+          <mxGeometry y="240" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_user_internal" value="Remote&#xa;User" style="shape=mxgraph.aws4.user;html=1;fillColor=#757575;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;" vertex="1" parent="col1_internal_row">
+          <mxGeometry x="20" y="80" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_vpc" value="VPC Network" style="swimlane;html=1;startSize=20;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="col1_internal_row">
+          <mxGeometry x="70" y="40" width="170" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_bastion" value="Bastion&#xa;Host" style="shape=mxgraph.gcp2.compute_engine;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;align=center;imageAspect=0;" vertex="1" parent="col1_vpc">
+          <mxGeometry x="20" y="50" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_gke_internal" value="Private IP" style="shape=mxgraph.gcp2.kubernetes;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;align=right;imageAspect=0;spacingRight=40;" vertex="1" parent="col1_vpc">
+          <mxGeometry x="110" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_arrow_ssh" value="SSH" style="endArrow=classic;html=1;fontSize=11;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="col1_internal_row" source="col1_user_internal" target="col1_bastion">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="95" as="sourcePoint" />
+            <mxPoint x="90" y="95" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col1_arrow_internal" value="" style="endArrow=classic;html=1;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="col1_vpc" source="col1_bastion" target="col1_gke_internal">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="50" as="sourcePoint" />
+            <mxPoint x="130" y="80" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="30" />
+              <mxPoint x="130" y="30" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col1_text_internal" value="Access via Bastion Host within VPC." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="col1_internal_row">
+          <mxGeometry x="10" y="190" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_container" value="2. IP-based Public IP" style="swimlane;html=1;startSize=40;fontSize=18;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="295" y="80" width="260" height="480" as="geometry">
+            <mxRectangle x="295" y="80" width="260" height="480" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col2_internet_row" value="Internet Access" style="swimlane;html=1;startSize=30;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="col2_container">
+          <mxGeometry y="40" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_user_internet" value="Remote&#xa;User" style="shape=mxgraph.aws4.user;html=1;fillColor=#757575;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;" vertex="1" parent="col2_internet_row">
+          <mxGeometry x="20" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_firewall" value="Firewall" style="shape=mxgraph.gcp2.firewall_rules;html=1;fillColor=#f5f5f5;strokeColor=#666666;verticalLabelPosition=bottom;verticalAlign=top;fontSize=11;" vertex="1" parent="col2_internet_row">
+          <mxGeometry x="90" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_gke_internet" value="GKE Control Plane&#xa;&#xa;Public&#xa;IP&#xa;Firewall&#xa;(Authorized Networks)" style="shape=mxgraph.gcp2.kubernetes;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=11;align=center;imageAspect=0;" vertex="1" parent="col2_internet_row">
+          <mxGeometry x="170" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_arrow_internet" value="" style="endArrow=classic;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="col2_internet_row" source="col2_user_internet" target="col2_firewall">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="75" as="sourcePoint" />
+            <mxPoint x="80" y="75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col2_arrow_firewall" value="" style="endArrow=classic;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="col2_internet_row" source="col2_firewall" target="col2_gke_internet">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="75" as="sourcePoint" />
+            <mxPoint x="160" y="75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col2_text_internet" value="Direct Internet Access Allowed&#xa;(Restricted by Authorized Networks)." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="col2_internet_row">
+          <mxGeometry x="10" y="140" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_internal_row" value="Internal Access via Bastion Host" style="swimlane;html=1;startSize=30;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="col2_container">
+          <mxGeometry y="240" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_user_internal" value="Remote&#xa;User" style="shape=mxgraph.aws4.user;html=1;fillColor=#757575;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;" vertex="1" parent="col2_internal_row">
+          <mxGeometry x="20" y="80" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_vpc" value="VPC Network" style="swimlane;html=1;startSize=20;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="col2_internal_row">
+          <mxGeometry x="70" y="40" width="170" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_bastion" value="Bastion&#xa;Host" style="shape=mxgraph.gcp2.compute_engine;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;align=center;imageAspect=0;" vertex="1" parent="col2_vpc">
+          <mxGeometry x="20" y="50" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_gke_internal" value="Public IP" style="shape=mxgraph.gcp2.kubernetes;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;align=right;imageAspect=0;spacingRight=40;" vertex="1" parent="col2_vpc">
+          <mxGeometry x="110" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_arrow_ssh" value="SSH" style="endArrow=classic;html=1;fontSize=11;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="col2_internal_row" source="col2_user_internal" target="col2_bastion">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="95" as="sourcePoint" />
+            <mxPoint x="90" y="95" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col2_arrow_internal" value="" style="endArrow=classic;html=1;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="col2_vpc" source="col2_bastion" target="col2_gke_internal">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="50" as="sourcePoint" />
+            <mxPoint x="130" y="80" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="30" />
+              <mxPoint x="130" y="30" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col2_text_internal" value="Access via Bastion Host is also possible." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="col2_internal_row">
+          <mxGeometry x="10" y="190" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_container" value="3. DNS Endpoint" style="swimlane;html=1;startSize=40;fontSize=18;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="570" y="80" width="260" height="480" as="geometry">
+            <mxRectangle x="570" y="80" width="260" height="480" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col3_internet_row" value="Internet Access" style="swimlane;html=1;startSize=30;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="col3_container">
+          <mxGeometry y="40" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_user_internet" value="Remote&#xa;User" style="shape=mxgraph.aws4.user;html=1;fillColor=#757575;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;" vertex="1" parent="col3_internet_row">
+          <mxGeometry x="20" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_gke_internet" value="GKE Control Plane&#xa;&#xa;Public&#xa;IP&#xa;Private IP" style="shape=mxgraph.gcp2.kubernetes;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=11;align=center;imageAspect=0;" vertex="1" parent="col3_internet_row">
+          <mxGeometry x="170" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_vpc_sc" value="VPC Service&#xa;Controls" style="shape=mxgraph.gcp2.security_command_center;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=11;" vertex="1" parent="col3_internet_row">
+          <mxGeometry x="130" y="80" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_arrow_dns_public" value="DNS Query&#xa;(Public DNS)" style="endArrow=classic;html=1;fontSize=11;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="col3_internet_row" source="col3_user_internet" target="col3_gke_internet">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="65" as="sourcePoint" />
+            <mxPoint x="160" y="55" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col3_arrow_access_public" value="" style="endArrow=classic;html=1;fontSize=12;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="col3_internet_row" source="col3_user_internet" target="col3_gke_internet">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="85" as="sourcePoint" />
+            <mxPoint x="160" y="85" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col3_text_internet" value="Resolves to Public IP for Internet&#xa;Clients (Protected by VPC-SC)." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="col3_internet_row">
+          <mxGeometry x="10" y="140" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_internal_row" value="Internal Access via Bastion Host" style="swimlane;html=1;startSize=30;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="col3_container">
+          <mxGeometry y="240" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_user_internal" value="Remote&#xa;User" style="shape=mxgraph.aws4.user;html=1;fillColor=#757575;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;" vertex="1" parent="col3_internal_row">
+          <mxGeometry x="20" y="80" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_vpc" value="VPC Network" style="swimlane;html=1;startSize=20;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="col3_internal_row">
+          <mxGeometry x="70" y="40" width="170" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_bastion" value="Bastion&#xa;Host" style="shape=mxgraph.gcp2.compute_engine;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;align=center;imageAspect=0;" vertex="1" parent="col3_vpc">
+          <mxGeometry x="20" y="50" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_gke_internal" value="Private IP" style="shape=mxgraph.gcp2.kubernetes;html=1;fillColor=#a0c4ff;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;fontSize=12;align=right;imageAspect=0;spacingRight=40;" vertex="1" parent="col3_vpc">
+          <mxGeometry x="110" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_arrow_ssh" value="SSH" style="endArrow=classic;html=1;fontSize=11;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="col3_internal_row" source="col3_user_internal" target="col3_bastion">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="95" as="sourcePoint" />
+            <mxPoint x="90" y="95" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col3_arrow_dns_private" value="DNS Query&#xa;(Private DNS)" style="endArrow=classic;html=1;fontSize=11;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="col3_vpc" source="col3_bastion" target="col3_gke_internal">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="50" as="sourcePoint" />
+            <mxPoint x="130" y="80" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="30" />
+              <mxPoint x="130" y="30" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="col3_text_internal" value="Resolves to Private IP for Internal Clients&#xa;(VPC-native access)." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="col3_internal_row">
+          <mxGeometry x="10" y="190" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="summary" value="Summary: DNS Endpoint provides a unified hostname that resolves to the appropriate IP (public or private) based on the client's network context, offering enhanced security with VPC Service Controls." style="text;html=1;strokeColor=#000000;fillColor=#f5f5f5;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;fontStyle=1;paddingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="580" width="810" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
