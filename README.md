@@ -1,3 +1,11 @@
+---
+Repo: https://github.com/ymeillier/06-gemini-xml-gen
+local repo: /Users/meillier/Documents/08-gcp-prototyping/test-xml
+---
+
+
+
+
 # Purpose
 
 Purpose is to test the ability to create draw.io diagrams with Gemini after first tinkering with the look of the diagram in gemini.
